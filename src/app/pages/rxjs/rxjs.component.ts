@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-rxjs',
   templateUrl: './rxjs.component.html',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RxjsComponent implements OnInit {
 
+  
   pruebas: any = [
     {
       nombre: 'Memoria',
@@ -50,4 +51,38 @@ export class RxjsComponent implements OnInit {
   ngOnInit() {
   }
 
+  message() {
+    console.log('Entro');
+    swal({
+      title: 'Are you sure?',
+      text: 'You wont be able to revert this!',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel!',
+      confirmButtonClass: 'btn btn-success',
+      cancelButtonClass: 'btn btn-danger',
+      buttonsStyling: false,
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+        swal(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        );
+      } else if (
+        // Read more about handling dismissals
+        result.dismiss === swal.DismissReason.cancel
+      ) {
+        swal(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
+        );
+      }
+    });
+  }
 }
