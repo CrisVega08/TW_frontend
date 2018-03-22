@@ -81,6 +81,18 @@ logout() {
   this._router.navigate(['/login']);
 }
 
+getData() {
+  let newURl = 'http://www.cansats3kratos.me/data/';
+  let headers = new HttpHeaders({ 'content-type': 'application/json'});
+  let options = ({ headers: headers });
+
+  return this._http.get(newURl, options)
+        .map( (res: any) => {
+          // this.saveStorage(res.id, res.token, res.usuario);
+          console.log(res);
+          // return true;
+        });
+}
   // ===================================================
   loginWithGoogle(token: string) {
     let headers = new HttpHeaders({ 'Authorization': token });

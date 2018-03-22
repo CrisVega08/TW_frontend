@@ -69,4 +69,10 @@ export class LoginComponent implements OnInit {
       });
     // this._router.navigate(['/dashboard']);
   }
+  obtJson () {
+    console.log('esta acá');
+    this._userSer.getData().subscribe((res) => {
+      console.log(res, 'respuesta');
+    });
+  }
 }

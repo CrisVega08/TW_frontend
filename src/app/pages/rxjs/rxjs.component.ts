@@ -52,16 +52,15 @@ export class RxjsComponent implements OnInit {
   }
 
   message() {
-    console.log('Entro');
     swal({
-      title: 'Are you sure?',
-      text: 'You wont be able to revert this!',
+      title: '¿Estás seguro de eliminar el registro?',
+      text: '¿Si lo eliminas no podras revertir este proceso?!',
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, cancel!',
+      confirmButtonText: 'Si, eliminar!',
+      cancelButtonText: 'No, cancelar!',
       confirmButtonClass: 'btn btn-success',
       cancelButtonClass: 'btn btn-danger',
       buttonsStyling: false,
@@ -69,17 +68,14 @@ export class RxjsComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         swal(
-          'Deleted!',
-          'Your file has been deleted.',
+          'Eliminado!',
+          'la prueba ha sido eliminada.',
           'success'
         );
-      } else if (
-        // Read more about handling dismissals
-        result.dismiss === swal.DismissReason.cancel
-      ) {
+      } else {
         swal(
-          'Cancelled',
-          'Your imaginary file is safe :)',
+          'Cancelado',
+          'Se ha cancelado la eliminación :)',
           'error'
         );
       }
