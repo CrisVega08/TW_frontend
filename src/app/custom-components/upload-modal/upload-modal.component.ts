@@ -57,7 +57,6 @@ export class UploadModalComponent implements OnInit {
       this._modUpl.notification.emit(resp);
       this.closeModal();
     }).catch((e) => {
-      console.log('Error en la carga...');
     });
   }
 }

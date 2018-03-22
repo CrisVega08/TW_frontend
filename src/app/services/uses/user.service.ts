@@ -20,7 +20,6 @@ export class UserService {
     public _router: Router,
     public _uplFilSer: UploadFileService
   ) {
-    console.log('Se inicio');
     this.loadStoge();
   }
 
@@ -90,7 +89,6 @@ getData() {
   return this._http.get(newURl, options)
         .map( (res: any) => {
           // this.saveStorage(res.id, res.token, res.usuario);
-          console.log(res);
           // return true;
         });
 }
@@ -131,10 +129,8 @@ getData() {
       this.user.img = res.usuario.img;
       // swal('Profile image uploaded', this.user.name, 'success');
       this.saveStorage(id, this.token, this.user);
-      console.log( res );
     })
     .catch( e => {
-      console.log( e );
     });
   }
 

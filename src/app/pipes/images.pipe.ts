@@ -26,7 +26,6 @@ export class ImagesPipe implements PipeTransform {
       break;
 
       default:
-        console.log('no existe imagen');
         url += '/usuario/xxx';
     }
 

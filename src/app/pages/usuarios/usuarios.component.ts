@@ -66,7 +66,6 @@ export class UsuariosComponent implements OnInit {
   saveRole (usuario: User) {
     this._userSer.updateUser(usuario)
       .subscribe( (res: any ) => {
-        console.log(res);
       });
   }
 
@@ -90,7 +89,7 @@ export class UsuariosComponent implements OnInit {
       if (result.value) {
         this._userSer.deleteUser(usuario._id)
                     .subscribe((resp) => {
-                      console.log(resp);
+                      .log(resp);
                       this.cargarUsuarios();
                     });
       }
