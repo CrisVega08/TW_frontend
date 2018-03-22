@@ -19,7 +19,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 // Temporal
 import { IncrementComponent } from '../custom-components/increment/increment.component';
 import { ChartDonaComponent } from '../custom-components/chart-dona/chart-dona.component';
-import { PromesisComponent } from './promesis/promesis.component';
+import { ResultComponent } from './result/result.component';
 import { PruebaComponent } from './pruebas/prueba.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
@@ -33,7 +33,7 @@ import { UploadModalComponent } from '../custom-components/upload-modal/upload-m
     IncrementComponent,
     ChartDonaComponent,
     AccountSettingsComponent,
-    PromesisComponent,
+    ResultComponent,
     PruebaComponent,
     ProfileComponent,
     UsuariosComponent,

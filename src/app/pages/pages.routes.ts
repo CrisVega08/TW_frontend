@@ -4,7 +4,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
-import { PromesisComponent } from './promesis/promesis.component';
+import { ResultComponent } from './result/result.component';
 import { PruebaComponent } from './pruebas/prueba.component';
 import { LoginGuardGuard } from '../services/service.index';
 import { ProfileComponent } from './profile/profile.component';
@@ -18,7 +18,7 @@ const pagesRoutes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent, data: { title: 'Dashboard'} },
       { path: 'graficas1', component: Graficas1Component, data: { title: 'Gráficas'} },
-      { path: 'promise', component: PromesisComponent, data: { title: 'Resultados'} },
+      { path: 'promise', component: ResultComponent, data: { title: 'Resultados'} },
       { path: 'prueba', component: PruebaComponent, data: { title: 'Pruebas'} },
       { path: 'account-setting', component: AccountSettingsComponent, data: { title: 'Configuración de cuenta'} },
       { path: 'profile', component: ProfileComponent, data: { title: 'Perfil'} },

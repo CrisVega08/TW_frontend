@@ -1,7 +1,7 @@
 <div class="row">
   <div *ngFor="let prueba of Pruebas" class="col-6">
-    <div class="card">
-      <img class="card-img-top img-fluid w250" [src]="prueba.img | images:'pruebas'" alt="Card image cap">
+    <div class="card ">
+      <img class="rounded mx-auto d-block w250" [src]="prueba.img | images:'pruebas'" alt="Card image cap">
       <div class="card-body">
         <h4 class="card-title">{{prueba.nombre}}</h4>
         <p class="card-text" [ngStyle]="{'height': '100px'}">{{prueba.descripcion}}</p>
