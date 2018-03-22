@@ -7,7 +7,7 @@ import { URL_SERVICES } from '../../config/config';
 import { UploadFileService } from '../uploadfile/upload-file.service';
 
 import 'rxjs/add/operator/map';
-import * as swal from 'sweetalert2';
+import swal from 'sweetalert2';
 
 @Injectable()
 export class UserService {
@@ -35,12 +35,13 @@ export class UserService {
   updateUser( user: User) {
     let headers = new HttpHeaders({ 'Authorization': this.token });
     let options = ({ headers: headers });
-    return this._http.put(this.url + '/usuario/' + this.user._id, user, options)
+    return this._http.put(this.url + '/usuario/' + user._id, user, options)
                 .map( (res: any) => {
-                  this.saveStorage(res.usuario._id, this.token, res.usuario);
-                  // this.user = res.usuario;
-                  // swal('User updated', user.name, 'succes');
 
+                  if ( user._id === this.user._id) {
+                    this.saveStorage(res.usuario._id, this.token, res.usuario);
+                  }
+                  swal('Usuario actualizado', user.name, 'success');
                   return true;
                 });
   }
@@ -136,4 +137,28 @@ getData() {
       console.log( e );
     });
   }
+
+
+  loadingUser(until: number = 0) {
+    return this._http.get(this.url + '/usuario?desde=' + until);
+   }
+ 
+   searchUser(term: string) {
+     return this._http.get(this.url + '/busqueda/coleccion/usuarios/' + term)
+                 .map( (resp: any) => resp.usuarios);
+   }
+ 
+   deleteUser(id: string) {
+     let headers = new HttpHeaders({ 'Authorization': this.token });
+     let options = ({ headers: headers });
+     return this._http.delete(this.url + '/usuario/' + id, options)
+                 .map( (res: any) => {
+                   swal(
+                     'Eliminado!',
+                     `usuario.nombre ha sido eliminado`,
+                     'success'
+                   );
+                   return true;
+                 });
+   }
 }

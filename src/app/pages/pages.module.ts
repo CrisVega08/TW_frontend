@@ -14,33 +14,34 @@ import { PAGES_ROUTES } from './pages.routes';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
-import { ProgressComponent } from './progress/progress.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 // Temporal
 import { IncrementComponent } from '../custom-components/increment/increment.component';
 import { ChartDonaComponent } from '../custom-components/chart-dona/chart-dona.component';
 import { PromesisComponent } from './promesis/promesis.component';
-import { RxjsComponent } from './rxjs/rxjs.component';
+import { PruebaComponent } from './pruebas/prueba.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UploadModalComponent } from '../custom-components/upload-modal/upload-modal.component';
 
 @NgModule({
   declarations: [
     PagesComponent,
     DashboardComponent,
     Graficas1Component,
-    ProgressComponent,
     IncrementComponent,
     ChartDonaComponent,
     AccountSettingsComponent,
     PromesisComponent,
-    RxjsComponent,
-    ProfileComponent
+    PruebaComponent,
+    ProfileComponent,
+    UsuariosComponent,
+    UploadModalComponent
   ],
   exports: [
     DashboardComponent,
     Graficas1Component,
-    ProgressComponent
   ],
   imports: [
     CommonModule,

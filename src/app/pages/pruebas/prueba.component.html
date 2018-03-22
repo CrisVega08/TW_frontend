@@ -1,0 +1,20 @@
+<div class="row">
+  <div *ngFor="let prueba of Pruebas" class="col-6">
+    <div class="card">
+      <img class="card-img-top img-fluid w250" [src]="prueba.img | images:'pruebas'" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">{{prueba.nombre}}</h4>
+        <p class="card-text" [ngStyle]="{'height': '100px'}">{{prueba.descripcion}}</p>
+        <a href="#" class="btn btn-success text-center">Iniciar Prueba</a>
+        <button class="btn btn-info">
+          <i class="ti-pencil-alt" ></i>Editar</button>
+        <button class="btn btn-danger" (click)="message()">
+          <i class="icon-trash"></i>Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- #main-wrapper > div > div > div:nth-child(6) > div:nth-child(1) > div > div.comment-widgets > div.d-flex.flex-row.comment-row.active > div.comment-text.active.w-100 > div > span.action-icons.active -->
