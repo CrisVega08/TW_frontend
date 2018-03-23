@@ -89,7 +89,6 @@ export class UsuariosComponent implements OnInit {
       if (result.value) {
         this._userSer.deleteUser(usuario._id)
                     .subscribe((resp) => {
-                      .log(resp);
                       this.cargarUsuarios();
                     });
       }
